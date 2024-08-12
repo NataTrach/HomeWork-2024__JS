@@ -1,0 +1,25 @@
+.main {
+    margin: 0;
+    display: flex;
+
+}
+
+.product-card {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+.product-title {
+    margin-left: 200px;
+    color: cadetblue;
+
+}
+
+.product-image {
+    margin-right: 300px;
+    width: 200px;
+    height: 260px;
+}
