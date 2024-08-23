@@ -64,13 +64,7 @@ let arrClient = [
 // - Взяти масив (Client [] з попереднього завдання).Відсортувати його по кількості товарів в полі order по зростанню.
 // (sort)
 
-
-
-// **********
-// console.log(arrClient.sort((a, b) => a.order.length - b.order.length));
-//**********
-
-
+console.log(arrClient.sort((a, b) => a.order.length - b.order.length));
 
 // #vV9a6584I5
 // - Створити функцію конструктор яка дозволяє створювати об'єкти car, з властивостями модель, виробник, рік випуску,
@@ -204,7 +198,6 @@ let cinderellas = [
     new Cinderella('Karina', '25', '35')
 ];
 
-
 class Princ {
     constructor(name, age, shoe) {
         this.name = name;
@@ -216,7 +209,46 @@ class Princ {
 
 const princ = new Princ('Ivan', '25', '34');
 
+for (let i = 0; i < cinderellas.length; i++) {
+    const cinderella = cinderellas[i];
+    if (cinderella.size === princ.shoe) {
+        console.log(`${cinderella.name}+${princ.name}=love`);
+    } else {
+        console.log(`no love`);
+    }
+}
+
 console.log(cinderellas.find(i => i.size === princ.shoe));
 
 // #gsKLAsNWM
 // *Через Array.prototype. створити власний foreach, filter
+
+
+let arr = ['O', 'k', 't', 'e', 'n'];
+
+Array.prototype.foreach = function (callback) {
+    for (let i = 0; i < this.length; i++) {
+        callback(i);
+    }
+};
+arr.foreach((i, index) => `${i} `);
+
+console.log(arr);
+
+
+//*******
+
+let num = [100500, 6, 8, 12, 10, 9];
+
+Array.prototype.filter = function (callback) {
+    let result = [];
+    for (let i = 0; i < this.length; i++) {
+        if (callback(i)) {
+            result.push(i);
+        }
+    }
+    return result;
+}
+num.filter((i)=>`${i}}`);
+
+console.log(num);

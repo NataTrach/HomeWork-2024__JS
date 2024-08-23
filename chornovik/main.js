@@ -69,3 +69,32 @@
 
 //**********
 
+let arr = ['o', 'k', 't', 'e', 'n'];
+
+Array.prototype.foreach = function (callback) {
+    for (let i = 0; i < this.length; i++) {
+        callback(i);
+    }
+};
+
+arr.foreach((i, index) => `${i},${index + 1}`);
+
+console.log(arr);
+
+// ************
+
+const numbers = [100, 200, 300, 400, 500];
+
+Array.prototype.filter = function (callback) {
+    const res = [];
+    for (let i = 0; i < this.length; i++) {
+        if (callback(i)) {
+            res.push(i);
+        }
+    }
+    return res;
+};
+
+const filterNum = numbers.filter(element => element);
+
+console.log(filterNum); // [3, 4, 5]
